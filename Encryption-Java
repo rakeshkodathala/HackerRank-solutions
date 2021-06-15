@@ -1,0 +1,47 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+import java.lang.Math;
+
+class Result {
+
+    
+
+    public static String encryption(String s) {
+    
+    String st = s.replaceAll("\\s", "");
+    
+    int l=s.length();
+    double r=Math.floor(Math.sqrt(l));
+    double c=Math.ceil(Math.sqrt(l));
+    
+    int len=(int) (r>c?r:c);
+    String result = "";
+    
+    for(int i=0;i<len;i++) {
+                for(int j=i;j<l;j += (int)c) {
+                    char ch=s.charAt(j);
+                    result+=ch;
+                }
+                result+=" ";
+            }
+    return result;
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+       
+        Scanner sc = new Scanner(System.in);
+        String str = new String();
+        str = sc.nextLine();
+        
+        String result = Result.encryption(str);
+        System.out.print(result);
+    }
+}
