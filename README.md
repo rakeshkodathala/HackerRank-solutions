@@ -1,1 +1,1 @@
-# HackerRank-solutions
+# Writing codes to improve knowledge
